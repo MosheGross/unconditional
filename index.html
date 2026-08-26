@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Unconditional Acceptance</title>
+
+    <meta
+        name="description"
+        content="Unconditional Acceptance exists to build a culture where human worth is not conditional."
+    >
+
+    <style>
+        :root {
+            --bg: #f7f5f0;
+            --card: #ffffff;
+
+            --text: #202632;
+            --muted: #686d76;
+
+            --navy: #101d35;
+            --navy-light: #192b4a;
+            --navy-soft: #e9edf3;
+
+            --gold: #c8a45b;
+            --gold-dark: #ad8741;
+            --gold-soft: #f2e9d6;
+
+            --cream: #f0ece3;
+            --border: #dedbd3;
+
+            --radius-lg: 32px;
+            --radius-md: 22px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        body.lightbox-open {
+            overflow: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .serif {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: normal;
+        }
+
+        p {
+            margin-bottom: 18px;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        /* ========================================
+           HEADER
+        ======================================== */
+
+        header {
+            background: var(--navy);
+            color: white;
+            padding: 30px 0 120px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border: 1px solid rgba(200, 164, 91, .12);
+            border-radius: 50%;
+            right: -190px;
+            top: 60px;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border: 1px solid rgba(200, 164, 91, .08);
+            border-radius: 50%;
+            right: -70px;
+            top: 150px;
+        }
+
+        /* ========================================
+           NAV
+        ======================================== */
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 105px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            line-height: 1.05;
+            max-width: 230px;
+        }
+
+        .logo span {
+            display: block;
+            font-family: Arial, sans-serif;
+            font-size: 9px;
+            letter-spacing: 2.3px;
+            text-transform: uppercase;
+            margin-top: 8px;
+            color: var(--gold);
+        }
+
+        .logo img{
+            max-width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            opacity: .82;
+            transition: .2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--gold);
+        }
+
+        /* ========================================
+           HERO
+        ======================================== */
+
+        .hero {
+            max-width: 940px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            font-size: clamp(52px, 7vw, 92px);
+            line-height: .98;
+            letter-spacing: -2.5px;
+            margin-bottom: 30px;
+            max-width: 900px;
+        }
+
+        .hero-copy {
+            font-family: Georgia, "Times New Roman", serif;
+            max-width: 710px;
+            color: rgba(255,255,255,.80);
+            font-size: 21px;
+            line-height: 1.55;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
+            padding: 13px 25px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: .2s ease;
+        }
+
+        .button.primary {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .button.primary:hover {
+            background: #d5b469;
+            transform: translateY(-2px);
+        }
+
+        .button.secondary {
+            border: 1px solid rgba(255,255,255,.35);
+            color: white;
+        }
+
+        .button.secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* ========================================
+           MAIN INTRO
+        ======================================== */
+
+        main {
+            margin-top: -64px;
+            padding-bottom: 90px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: 1.35fr .65fr;
+            gap: 55px;
+            padding: 52px;
+            border-radius: var(--radius-lg);
+            background: white;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 60px rgba(16,29,53,.08);
+            align-items: center;
+        }
+
+        .section-label {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 11px;
+            color: var(--gold-dark);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: var(--navy);
+            font-size: clamp(36px, 4vw, 50px);
+            line-height: 1.08;
+            letter-spacing: -1px;
+            margin-bottom: 22px;
+        }
+
+        h3 {
+            color: var(--navy);
+            font-size: 25px;
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+
+        .intro-copy {
+            font-size: 17px;
+            color: #555b65;
+            max-width: 690px;
+        }
+
+        .statement {
+            background: var(--gold-soft);
+            border-radius: 24px;
+            padding: 32px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            line-height: 1.35;
+            color: var(--navy);
+        }
+
+        .statement::before {
+            content: "“";
+            display: block;
+            font-size: 70px;
+            line-height: .6;
+            color: var(--gold);
+            margin-bottom: 18px;
+        }
+
+        /* ========================================
+           SECTIONS
+        ======================================== */
+
+        .section {
+            padding: 85px 0 10px;
+        }
+
+        .section-heading {
+            max-width: 750px;
+            margin-bottom: 42px;
+        }
+
+        .section-heading p {
+            font-size: 18px;
+            color: var(--muted);
+        }
+
+        /* ========================================
+           PRINCIPLES
+        ======================================== */
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .principle {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            padding: 30px;
+            min-height: 270px;
+        }
+
+        .number {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gold-soft);
+            color: var(--gold-dark);
+            margin-bottom: 25px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .principle p {
+            color: var(--muted);
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+
+        /* ========================================
+           PROGRAMMES
+        ======================================== */
+
+        .programmes {
+            margin-top: 80px;
+            background: var(--navy);
+            border-radius: 36px;
+            padding: 60px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .programmes::after {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border: 1px solid rgba(200,164,91,.12);
+            border-radius: 50%;
+            right: -220px;
+            bottom: -270px;
+        }
+
+        .programmes .section-label {
+            color: var(--gold);
+        }
+
+        .programmes h2 {
+            color: white;
+        }
+
+        .programmes-intro {
+            color: rgba(255,255,255,.7);
+            max-width: 700px;
+            font-size: 18px;
+        }
+
+        .programme-grid {
+            position: relative;
+            z-index: 2;
+            margin-top: 42px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .programme {
+            border-radius: 26px;
+            padding: 33px;
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(255,255,255,.12);
+            display: flex;
+            flex-direction: column;
+            min-height: 440px;
+        }
+
+        .programme-tag {
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 26px;
+        }
+
+        .programme h3 {
+            color: white;
+            font-size: 32px;
+        }
+
+        .programme-sub {
+            font-family: Georgia, serif;
+            color: var(--gold);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .programme p {
+            color: rgba(255,255,255,.72);
+            font-size: 15px;
+        }
+
+        .programme-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: auto;
+            padding-top: 20px;
+            font-size: 14px;
+        }
+
+        .programme-link::after {
+            content: " →";
+        }
+
+        /* ========================================
+           TWO COLUMN
+        ======================================== */
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 28px;
+            padding: 42px;
+            border: 1px solid var(--border);
+        }
+
+        .feature-card.alt {
+            background: var(--gold-soft);
+        }
+
+        .feature-card p {
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        /* ========================================
+           CULTURE
+        ======================================== */
+
+        .culture {
+            margin-top: 80px;
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .culture h2 {
+            max-width: 850px;
+            margin: 0 auto 28px;
+        }
+
+        .culture p {
+            max-width: 720px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            color: var(--muted);
+        }
+
+        .culture-line {
+            font-family: Georgia, serif;
+            font-size: clamp(28px, 4vw, 45px);
+            color: var(--gold-dark);
+            line-height: 1.2;
+        }
+
+        /* ========================================
+           VISION
+        ======================================== */
+
+        .vision {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 70px;
+            border-radius: 36px;
+            margin-top: 50px;
+        }
+
+        .vision .section-label {
+            color: rgba(16,29,53,.65);
+        }
+
+        .vision h2 {
+            color: var(--navy);
+            max-width: 880px;
+        }
+
+        .vision-lines {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: rgba(16,29,53,.18);
+            margin-top: 38px;
+        }
+
+        .vision-line {
+            background: var(--gold);
+            padding: 20px 20px 20px 0;
+            font-family: Georgia, serif;
+            font-size: 20px;
+        }
+
+        /* ========================================
+           CONTACT
+        ======================================== */
+
+        .contact {
+            padding: 100px 0 40px;
+        }
+
+        .contact-box {
+            text-align: center;
+            background: white;
+            border-radius: 32px;
+            padding: 60px 30px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-box h2 {
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+            font-size: 17px;
+            max-width: 650px;
+            margin: 0 auto 28px;
+        }
+
+        /* ========================================
+           GALLERY
+        ======================================== */
+
+        .gallery-section {
+            padding: 80px 0 100px;
+            overflow: hidden;
+        }
+
+        .gallery-heading {
+            width: min(1160px, calc(100% - 40px));
+            margin: 0 auto 38px;
+        }
+
+        .gallery-heading h2 {
+            max-width: 700px;
+        }
+
+        .gallery-heading p {
+            color: var(--muted);
+            max-width: 650px;
+        }
+
+        .gallery-slider {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .gallery-track {
+            display: flex;
+            gap: 18px;
+            width: max-content;
+            animation: galleryScroll 38s linear infinite;
+        }
+
+        .gallery-slider:hover .gallery-track {
+            animation-play-state: paused;
+        }
+
+        .gallery-item {
+            width: 340px;
+            height: 240px;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            background: none;
+            overflow: hidden;
+            border-radius: 18px;
+            cursor: pointer;
+            flex: 0 0 auto;
+        }
+
+        .gallery-item img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.035);
+        }
+
+        @keyframes galleryScroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(calc(-50% - 9px));
+            }
+        }
+
+        /* ========================================
+           LIGHTBOX
+        ======================================== */
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(5,11,22,.94);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 70px 90px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-image-wrap {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 20px 70px rgba(0,0,0,.4);
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            appearance: none;
+            border: 0;
+            background: rgba(255,255,255,.08);
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: .2s ease;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .lightbox-close {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            right: 25px;
+            top: 25px;
+            font-size: 27px;
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 28px;
+        }
+
+        .lightbox-prev {
+            left: 25px;
+        }
+
+        .lightbox-next {
+            right: 25px;
+        }
+
+        .lightbox-count {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,.7);
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+
+        footer {
+            background: var(--navy);
+            color: rgba(255,255,255,.6);
+            padding: 32px 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* ========================================
+           RESPONSIVE
+        ======================================== */
+
+        @media (max-width: 950px) {
+            .principles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .programme-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .programme {
+                min-height: 0;
+            }
+        }
+
+        @media (max-width: 760px) {
+
+            .container {
+                width: min(100% - 28px, 1160px);
+            }
+
+            header {
+                padding-bottom: 95px;
+            }
+
+            nav {
+                align-items: flex-start;
+                flex-direction: column;
+                margin-bottom: 65px;
+            }
+
+            .nav-links {
+                gap: 16px;
+                flex-wrap: wrap;
+            }
+
+            h1 {
+                font-size: 51px;
+                letter-spacing: -1.5px;
+            }
+
+            .hero-copy {
+                font-size: 18px;
+            }
+
+            .intro {
+                padding: 30px;
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .section {
+                padding-top: 65px;
+            }
+
+            .principles-grid,
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .programmes {
+                padding: 35px 24px;
+                border-radius: 28px;
+            }
+
+            .feature-card {
+                padding: 30px;
+            }
+
+            .culture {
+                padding: 65px 10px;
+            }
+
+            .vision {
+                padding: 40px 27px;
+                border-radius: 28px;
+            }
+
+            .vision-lines {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                padding-top: 70px;
+            }
+
+            .contact-box {
+                padding: 42px 25px;
+            }
+
+            .gallery-heading {
+                width: calc(100% - 28px);
+            }
+
+            .gallery-item {
+                width: 270px;
+                height: 195px;
+            }
+
+            .lightbox {
+                padding: 65px 15px;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                width: 44px;
+                height: 44px;
+                font-size: 22px;
+            }
+
+            .lightbox-prev {
+                left: 12px;
+            }
+
+            .lightbox-next {
+                right: 12px;
+            }
+
+            .lightbox-close {
+                right: 12px;
+                top: 12px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .gallery-track {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+
+        <nav>
+            <div class="logo">
+                <img src="unac.png">
+            </div>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#principles">What We Believe</a>
+                <a href="#programmes">Our Work</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Get Support</a>
+            </div>
+        </nav>
+
+        <div class="hero">
+
+            <div class="eyebrow">
+                Dignity · Compassion · Belonging
+            </div>
+
+            <h1>
+                You don’t have to earn your worth.
+            </h1>
+
+            <div class="hero-copy">
+                Every person deserves dignity, compassion and a sense of
+                belonging — through mistakes, differences, difficult
+                circumstances and difficult chapters.
+            </div>
+
+            <div class="buttons">
+
+                <a href="#programmes" class="button primary">
+                    Find Support
+                </a>
+
+                <a href="#about" class="button secondary">
+                    About Our Work
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+
+<main>
+
+    <div class="container">
+
+        <!-- ABOUT -->
+
+        <section id="about" class="intro">
+
+            <div>
+
+                <div class="section-label">
+                    What Unconditional Acceptance Means
+                </div>
+
+                <h2>
+                    Acceptance doesn’t mean everything is acceptable.
+                </h2>
+
+                <div class="intro-copy">
+
+                    <p>
+                        It means recognising the person behind the problem.
+                    </p>
+
+                    <p>
+                        Unconditional Acceptance exists to help create a culture
+                        where we can recognise mistakes, encourage change and
+                        maintain healthy boundaries without withdrawing a
+                        person’s dignity or sense of worth.
+                    </p>
+
+                    <p>
+                        We believe people should be able to ask for help without
+                        first hiding the parts of their lives they fear others
+                        will judge.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="statement">
+                Your struggle may be part of your story. It is not your value
+                as a person.
+            </div>
+
+        </section>
+
+
+        <!-- PRINCIPLES -->
+
+        <section id="principles" class="section">
+
+            <div class="section-heading">
+
+                <div class="section-label">
+                    What We’re Here To Change
+                </div>
+
+                <h2>
+                    A more human way of responding to each other.
+                </h2>
+
+                <p>
+                    Acceptance can exist alongside responsibility, boundaries
+                    and change. What it should never require is stripping
+                    somebody of their basic sense of worth.
+                </p>
+
+            </div>
+
+            <div class="principles-grid">
+
+                <div class="principle">
+                    <div class="number">01</div>
+                    <h3>Support without judgement</h3>
+                    <p>
+                        Helping people through difficult periods with
+                        compassion, dignity and practical support.
+                    </p>
+                </div>
+
+                <div class="principle">
+                    <div class="number">02</div>
+                    <h3>Connection without conditions</h3>
+                    <p>
+                        Helping families and friends remain connected while
+                        communicating clearly and establishing healthy
+                        boundaries.
+                    </p>
+                </div>
+
+                <div class="principle">
+                    <div class="number">03</div>
+                    <h3>Understanding before judgement</h3>
+                    <p>
+                        Challenging stigma and encouraging people to become
+                        curious about somebody’s story before defining them by
+                        it.
+                    </p>
+                </div>
+
+                <div class="principle">
+                    <div class="number">04</div>
+                    <h3>Acceptance of ourselves</h3>
+                    <p>
+                        Helping people recognise mistakes, weaknesses and
+                        difficult chapters without allowing them to define
+                        their entire worth.
+                    </p>
+                </div>
+
+                <div class="principle">
+                    <div class="number">05</div>
+                    <h3>Belonging across differences</h3>
+                    <p>
+                        Creating spaces where people from different backgrounds,
+                        circumstances and experiences can belong without fitting
+                        a particular mould.
+                    </p>
+                </div>
+
+                <div class="principle">
+                    <div class="number">06</div>
+                    <h3>A different culture</h3>
+                    <p>
+                        Listening before judging, disagreeing without
+                        devaluing and setting boundaries without rejecting.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROGRAMMES -->
+
+        <section id="programmes" class="programmes">
+
+            <div class="section-label">
+                Our Work
+            </div>
+
+            <h2>
+                Support that meets people where they are.
+            </h2>
+
+            <p class="programmes-intro">
+                Different situations need different kinds of support. Our
+                initiatives create places to talk, find practical help, access
+                guidance and simply be around people who understand.
+            </p>
+
+            <div class="programme-grid">
+
+                <div class="programme">
+
+                    <div class="programme-tag">
+                        Listening & Support
+                    </div>
+
+                    <h3>Between Us</h3>
+
+                    <div class="programme-sub">
+                        Somewhere to talk. Without judgement.
+                    </div>
+
+                    <p>
+                        Between Us is a confidential listening and support line
+                        for anyone who needs somewhere to speak openly.
+                    </p>
+
+                    <p>
+                        It is for people facing addiction, emotional or mental
+                        health difficulties, identity challenges, relationship
+                        problems, loneliness, shame or another difficult
+                        period — as well as the people around them.
+                    </p>
+
+                    <p>
+                        Trained listeners offer a calm space, practical
+                        information and, where appropriate, help finding
+                        professional or specialist support.
+                    </p>
+
+                    <a href="#contact" class="programme-link">
+                        Talk to Between Us
+                    </a>
+
+                </div>
+
+
+                <div class="programme">
+
+                    <div class="programme-tag">
+                        Convention
+                    </div>
+
+                    <h3>Uninterrupted</h3>
+
+                    <div class="programme-sub">
+                        One day. Fewer barriers.
+                    </div>
+
+                    <p>
+                        Uninterrupted is a one-day countryside convention
+                        bringing support, information and human connection
+                        together in one place.
+                    </p>
+
+                    <p>
+                        Hear honest stories, speak privately to professionals,
+                        join discussions, ask questions, take a walk or simply
+                        spend time around people who understand.
+                    </p>
+
+                    <p>
+                        Professionals and people with lived experience are
+                        equally central to the day.
+                    </p>
+
+                    <a href="#contact" class="programme-link">
+                        Discover Uninterrupted
+                    </a>
+
+                </div>
+
+
+                <div class="programme">
+
+                    <div class="programme-tag">
+                        Practical Support
+                    </div>
+
+                    <h3>Crisis Kit</h3>
+
+                    <div class="programme-sub">
+                        Making everyday life manageable again.
+                    </div>
+
+                    <p>
+                        Crisis Kit provides up to four weeks of practical help
+                        when a crisis has made ordinary life difficult to
+                        manage.
+                    </p>
+
+                    <p>
+                        Rather than giving everyone the same package, we start
+                        with one question:
+                    </p>
+
+                    <p>
+                        <strong>
+                            What is causing the most immediate pressure right now?
+                        </strong>
+                    </p>
+
+                    <p>
+                        That may mean meals, supermarket vouchers, children’s
+                        clothing, an essential appliance, transport or another
+                        immediate need.
+                    </p>
+
+                    <a href="#contact" class="programme-link">
+                        Find Out About Crisis Kit
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INDIVIDUALS / FAMILIES -->
+
+        <section class="section">
+
+            <div class="two-col">
+
+                <div class="feature-card">
+
+                    <div class="section-label">
+                        For Individuals
+                    </div>
+
+                    <h2>
+                        You can ask for help without hiding first.
+                    </h2>
+
+                    <p>
+                        Addiction, emotional difficulty, identity questions,
+                        loneliness, mistakes or painful circumstances can make
+                        people feel that they have to hide part of themselves
+                        before they can belong.
+                    </p>
+
+                    <p>
+                        We want people to be able to seek support while still
+                        being treated as a whole human being.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card alt">
+
+                    <div class="section-label">
+                        For Families & Friends
+                    </div>
+
+                    <h2>
+                        The person beside them may need support too.
+                    </h2>
+
+                    <p>
+                        A crisis rarely affects one person alone. Parents,
+                        spouses, siblings, children and friends can also feel
+                        frightened, confused or overwhelmed.
+                    </p>
+
+                    <p>
+                        We help people understand what their loved one may be
+                        experiencing, communicate more effectively, establish
+                        healthy boundaries and remain connected without
+                        carrying everything alone.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CULTURE -->
+
+        <section class="culture">
+
+            <div class="section-label">
+                Breaking Down Barriers
+            </div>
+
+            <h2>
+                Difference doesn’t have to mean division.
+            </h2>
+
+            <p>
+                Background, income, identity, disability, family
+                circumstances, personal history, lifestyle or mistakes can
+                quickly become labels — and labels can become reasons to
+                exclude.
+            </p>
+
+            <div class="culture-line">
+                Listen first. Understand more. Judge less.
+            </div>
+
+        </section>
+
+
+        <!-- VISION -->
+
+        <section class="vision">
+
+            <div class="section-label">
+                Our Vision
+            </div>
+
+            <h2>
+                A society where nobody has to earn the right to be treated
+                with dignity.
+            </h2>
+
+            <div class="vision-lines">
+
+                <div class="vision-line">
+                    Difference does not mean division.
+                </div>
+
+                <div class="vision-line">
+                    Mistakes do not erase worth.
+                </div>
+
+                <div class="vision-line">
+                    Struggle does not lead to rejection.
+                </div>
+
+                <div class="vision-line">
+                    Acceptance creates space to change and move forward.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section id="contact" class="contact">
+
+            <div class="contact-box">
+
+                <div class="section-label">
+                    Get Support
+                </div>
+
+                <h2>
+                    Need somewhere to start?
+                </h2>
+
+                <p>
+                    Whether you need somebody to talk to, practical help
+                    during a crisis, guidance for somebody you care about or
+                    simply want to understand what support is available,
+                    contact Unconditional Acceptance confidentially.
+                </p>
+
+                <a
+                    href="mailto:hello@unconditionalacceptance.org"
+                    class="button primary"
+                >
+                    Get in Touch
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =======================================
+         SLIDING GALLERY
+    ======================================== -->
+
+    <section id="gallery" class="gallery-section">
+
+        <div class="gallery-heading">
+
+            <div class="section-label">
+                Our Community
+            </div>
+
+            <h2>
+                Connection, conversation and belonging.
+            </h2>
+
+            <p>
+                A glimpse into the conversations, events and spaces that bring
+                people together.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-slider">
+
+            <div class="gallery-track" id="galleryTrack">
+
+                <!-- ORIGINAL SET -->
+
+                <button
+                    class="gallery-item"
+                    type="button"
+                    data-index="0"
+                >
+                    <img
+                        src="https://picsum.photos/id/1015/1000/700"
+                        alt="Community gallery image 1"
+                    >
+                </button>
+
+                <button
+                    class="gallery-item"
+                    type="button"
+                    data-index="1"
+                >
+                    <img
+                        src="https://picsum.photos/id/1016/1000/700"
+                        alt="Community gallery image 2"
+                    >
+                </button>
+
+                <button
+                    class="gallery-item"
+                    type="button"
+                    data-index="2"
+                >
+                    <img
+                        src="https://picsum.photos/id/1025/1000/700"
+                        alt="Community gallery image 3"
+                    >
+                </button>
+
+                <button
+                    class="gallery-item"
+                    type="button"
+                    data-index="3"
+                >
+                    <img
+                        src="https://picsum.photos/id/1035/1000/700"
+                        alt="Community gallery image 4"
+                    >
+                </button>
+
+                <button
+                    class="gallery-item"
+                    type="button"
+                    data-index="4"
+                >
+                    <img
+                        src="https://picsum.photos/id/1040/1000/700"
+                        alt="Community gallery image 5"
+                    >
+                </button>
+
+                <button
+                    class="gallery-item"
+                    type="button"
+                    data-index="5"
+                >
+                    <img
+                        src="https://picsum.photos/id/1043/1000/700"
+                        alt="Community gallery image 6"
+                    >
+                </button>
+
+
+                <!-- DUPLICATED SET FOR SEAMLESS LOOP -->
+
+                <button
+                    class="gallery-item"
+                    type="button"
+                    data-index="0"
+                >
+                    <img
+                        src="https://picsum.photos/id/1015/1000/700"
+                        alt="Community gallery image 1"
+                    >
+                </button>
+
+                <button
+                    class="gallery-item"
+                    type="button"
+                    data-index="1"
+                >
+                    <img
+                        src="https://picsum.photos/id/1016/1000/700"
+                        alt="Community gallery image 2"
+                    >
+                </button>
+
+                <button
+                    class="gallery-item"
+                    type="button"
+                    data-index="2"
+                >
+                    <img
+                        src="https://picsum.photos/id/1025/1000/700"
+                        alt="Community gallery image 3"
+                    >
+                </button>
+
+                <button
+                    class="gallery-item"
+                    type="button"
+                    data-index="3"
+                >
+                    <img
+                        src="https://picsum.photos/id/1035/1000/700"
+                        alt="Community gallery image 4"
+                    >
+                </button>
+
+                <button
+                    class="gallery-item"
+                    type="button"
+                    data-index="4"
+                >
+                    <img
+                        src="https://picsum.photos/id/1040/1000/700"
+                        alt="Community gallery image 5"
+                    >
+                </button>
+
+                <button
+                    class="gallery-item"
+                    type="button"
+                    data-index="5"
+                >
+                    <img
+                        src="https://picsum.photos/id/1043/1000/700"
+                        alt="Community gallery image 6"
+                    >
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =======================================
+     LIGHTBOX
+======================================== -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image gallery"
+>
+
+    <button
+        type="button"
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Close gallery"
+    >
+        ×
+    </button>
+
+
+    <button
+        type="button"
+        class="lightbox-prev"
+        id="lightboxPrev"
+        aria-label="Previous image"
+    >
+        ‹
+    </button>
+
+
+    <div class="lightbox-image-wrap">
+        <img id="lightboxImage" src="" alt="">
+    </div>
+
+
+    <button
+        type="button"
+        class="lightbox-next"
+        id="lightboxNext"
+        aria-label="Next image"
+    >
+        ›
+    </button>
+
+
+    <div class="lightbox-count" id="lightboxCount"></div>
+
+</div>
+
+
+<footer>
+    © 2026 Unconditional Acceptance. All rights reserved.
+</footer>
+
+
+<script>
+
+    /* =======================================
+       GALLERY LIGHTBOX
+    ======================================== */
+
+    const galleryImages = [
+        "https://picsum.photos/id/1015/1400/950",
+        "https://picsum.photos/id/1016/1400/950",
+        "https://picsum.photos/id/1025/1400/950",
+        "https://picsum.photos/id/1035/1400/950",
+        "https://picsum.photos/id/1040/1400/950",
+        "https://picsum.photos/id/1043/1400/950"
+    ];
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+    const lightboxCount = document.getElementById("lightboxCount");
+
+    let currentImage = 0;
+
+
+    function showImage(index) {
+
+        if (index < 0) {
+            index = galleryImages.length - 1;
+        }
+
+        if (index >= galleryImages.length) {
+            index = 0;
+        }
+
+        currentImage = index;
+
+        lightboxImage.src = galleryImages[currentImage];
+
+        lightboxImage.alt =
+            "Gallery image " + (currentImage + 1);
+
+        lightboxCount.textContent =
+            (currentImage + 1) + " / " + galleryImages.length;
+    }
+
+
+    function openLightbox(index) {
+
+        currentImage = index;
+
+        showImage(currentImage);
+
+        lightbox.classList.add("active");
+
+        document.body.classList.add("lightbox-open");
+    }
+
+
+    function closeLightbox() {
+
+        lightbox.classList.remove("active");
+
+        document.body.classList.remove("lightbox-open");
+    }
+
+
+    document.querySelectorAll(".gallery-item").forEach(function(item) {
+
+        item.addEventListener("click", function() {
+
+            openLightbox(
+                parseInt(this.dataset.index)
+            );
+
+        });
+
+    });
+
+
+    lightboxPrev.addEventListener("click", function() {
+
+        showImage(currentImage - 1);
+
+    });
+
+
+    lightboxNext.addEventListener("click", function() {
+
+        showImage(currentImage + 1);
+
+    });
+
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+
+    lightbox.addEventListener("click", function(event) {
+
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+
+    });
+
+
+    document.addEventListener("keydown", function(event) {
+
+        if (!lightbox.classList.contains("active")) {
+            return;
+        }
+
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+
+        if (event.key === "ArrowLeft") {
+            showImage(currentImage - 1);
+        }
+
+        if (event.key === "ArrowRight") {
+            showImage(currentImage + 1);
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
